@@ -1,154 +1,109 @@
-JavaScript provides three ways to declare variables:
-var
-let
-const
-var a = 10;
+<h1> JavaScript: var, let, and const (Complete Guide with Examples) </h1>
+
+This document provides a detailed, example-based explanation of JavaScript variable declarations: var, let, and const.
+
+<h2> Variable Naming Rules </h2>
+
+```js
+var a = "temp";
 var _123 = "Hello";
-var $123 = "World";
+var $123 = "Hello";
+b = 24; // never use
+```
 
+<h1> var (ES5) </h1>
 
-var, let, and const
-var
-Can be redeclared
-Can be reassigned
-Function-scoped
-Hoisted with undefined
-var d;        // declaration
-var d = 12;   // redeclaration & initialization
+<p> js </b>
+var a = "temp";
+</p>
 
+- Function scoped
+- Can be redeclared
+- Can be reassigned
+- Hoisted with undefined
 
-let
-Cannot be redeclared
-Can be reassigned
-Block-scoped
-Hoisted but in Temporal Dead Zone
-let name1 = "user name1";
+<h1> let (ES6) </h1> 
 
-var temp = 12;
-temp = "number";        // reassignment
-var temp = "new value"; // redeclaration (allowed with var)
+```js
+let temp = "abc";
+```
 
+- Block scoped
+- Can be reassigned
+- Cannot be redeclared
+- TDZ applies
 
+<h1> const (ES6) </h1> 
 
-Scope in JavaScript
-Types of Scope
-Global Scope
-Block Scope
-Function Scope
+```js
+const temp_const = "Hello World !!";
+```
 
-var
-var e = 23; // global scope
-console.log(e);
+- Block scoped
+- Must be initialized
+- Cannot be redeclared or reassigned
 
+<h1> Declaration vs Initialization </h1> 
+
+```js
+var d;
+var d = 12;
+```
+
+<h1>var Scope Example</h1> 
+
+```js
+var e = 23;
 {
-    var e = 25; // NOT block-scoped
-    console.log("Block Scope " + e);
+    var e = 25;
+    console.log(e);
 }
-
 function abc() {
-    var e = 45; // function scope
-    console.log("Function Scope " + e);
+    var e = 30;
+    console.log(e);
 }
 abc();
-
 console.log(e);
+```
 
-let
-let f = 23; // global scope
-console.log(f);
+<h1>let Scope Example</h1> 
 
+```js
+let f = 200;
 {
-    let f = 25; // block scope
-    console.log("Block Scope " + f);
+    let f = 205;
+    console.log(f);
 }
-
 function abc() {
-    let f = 45; // function scope
-    console.log("Functional Scope " + f);
+    let f = 300;
+    console.log(f);
 }
 abc();
-
 console.log(f);
+```
 
+<h1> Temporal Dead Zone </h1> 
 
-Temporal Dead Zone (TDZ)
-when you create a variable into js that break into two part first is declare and second is initialize part that go down
-
-console.log(temp_b); // undefined
+```js
+console.log(temp_b);
 var temp_b = 24;
+```
 
-console.log(j); // ❌ ReferenceError
+```js
+console.log(j);
 let j = 12;
+```
 
+<h1> Hoisting Summary </h1> 
 
-Hoisting Explained
-JavaScript breaks variable creation into two steps:
-Declaration (hoisted)
-Initialization (not hoisted)
-var temp_d = 12;
+```js
+var   -> hoisted -> undefined
+let   -> hoisted -> error
+const -> hoisted -> error
+```
 
-// Internally becomes:
-var temp_d;      // hoisted (undefined)
-temp_d = 12;     // initialization
-var   --> hoist --> undefined
-let   --> hoist --> error
-const --> hoist --> error
+<h1>  </h1> 
 
-
-TASK------------------------------
-
-<h1>Example or Excercise:</h1>
-
-<div>
-<h3>Example 1 :</h3>
-<p>console.log(nm);</p>
-<p>let nm = "name";</p>
-<p>Answer or Error: error</p>
-<p>Why : let variable is not allowed to use before declare </p>
-</div>
-
-<div>
-<h3>Example 2 :</h3>
-<p>console.log(b);</p>-
-<p>var b = "username";</p>
-<p>Answer or Error: undifiend</p>
-<p>Why : var is allowed to use before itialize </p>
-</div>
-
-<div>
-<h3>Example 3 :</h3>
-<p>var x = 1;</p>
-<p>{
-    var x= 2;
-}
-</p>
-<p>console.log(x);</p>
-<p>Answer or Error:2 </p>
-<p>Why : because var is function scope not block scope</p>
-</div>
-
-<div>
-<h3>Example 4 :</h3>
-<p>let a = 10; </p>
-<p>{
-    let a = 20;
-    console.log("Inside:", a);
-}</p>
-<p>
-console.log("Outside:", a);
-</p>
-<p>Answer or Error: inside : 20
-                    inside : 10</p>
-<p>Why : let is block and function scope </p>
-</div>
-
-<div>
-<h3>Example 5 :</h3>
-<p>const person = {name: "demo"}; </p>
-on console.log
-<p>person.name= "user"; ✅</p>
-<p>person = {} ; ❌ </p>
-<p>Answer or Error: user
-                    error </p>
-<p>Why : because person is object and first object value not change but second time object value got empty so error come </p>
-</div>
+- Use const by default
+- Use let when reassignment is needed
+- Avoid var
