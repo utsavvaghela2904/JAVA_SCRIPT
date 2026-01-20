@@ -104,7 +104,7 @@ console.log("outside: ", y);
 
 // -------------------------------------------------------------------------
 
-// Example 5 :
+// Example 5  :
 const person = { name: "demo" };
 console.log;
 person.name = "user";
