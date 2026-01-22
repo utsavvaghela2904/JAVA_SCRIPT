@@ -5,7 +5,7 @@
 // copy --> real value
 let a = 12;
 let b = a; // a--> 12
-a = a+3;
+a = a + 3;
 
 // types: string, number, boolean, null, undefined, symbol,bigint
 
@@ -26,7 +26,7 @@ temp_b.pop(); // remove value
 // ``-backticks
 
 let d = "name";
-d = 'username';
+d = "username";
 d = `firstname`;
 
 // number:
@@ -35,7 +35,7 @@ e = 12.5;
 
 // boolean:
 let f = true;
-f = false;  
+f = false;
 
 // null:
 let g = null; // empty value
@@ -48,9 +48,9 @@ let h;
 let u1 = Symbol("uid");
 let u2 = Symbol("uid");
 // check u1==u2
-let obj ={uid: 1, name: "test", email: "test@test.com"};
-let u3 = Symbol("uid")
-obj[u3]= "001"
+let obj = { uid: 1, name: "test", email: "test@test.com" };
+let u3 = Symbol("uid");
+obj[u3] = "001";
 
 // bigint:
 //cheak range of number, number.max_safe_integer
@@ -62,25 +62,25 @@ num2 + 3n;
 // <-----non-Primitive Data Types---->
 // types: arrays [], objects {}, functions ()
 let temp_array = ["name", "age", "phobe number"];
-let obj = {name: "test", age: 24, phone: "1234567890"};
+let obj = { name: "test", age: 24, phone: "1234567890" };
 function name(params) {}
 
 // -------------------------------------------------------------------------
 
 // Example 1:
-console.log(true + false); 
+console.log(true + false);
 // 1
 
 // -------------------------------------------------------------------------
 
 // Example 2:
-console.log("12" + 12); 
+console.log("12" + 12);
 // "1212"
 
 // -------------------------------------------------------------------------
 
 // Example 3:
-console.log("12" - 1); 
+console.log("12" - 1);
 // 11
 
 // -------------------------------------------------------------------------
@@ -92,7 +92,7 @@ console.log(!!undefined);
 // -------------------------------------------------------------------------
 
 // Example 5:
-console.log("12" - 1); 
+console.log("12" - 1);
 // 11
 
 // -------------------------------------------------------------------------
@@ -106,4 +106,3 @@ console.log(y);
 // output: null
 
 // -------------------------------------------------------------------------
-
